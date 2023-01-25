@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-login
+  namespace: portal
+  labels:
+    app: portal-login
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portal-login
+  template:
+    metadata:
+      labels:
+        app: portal-login
+    spec:
+      containers:
+      - name: portal-login
+        image: gcr.io/tranquil-garage-139216/portal-login-qa:latest
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: portal-login
+  namespace: portal
+spec:
+  domains:
+    - portal-login-k8s.qa.windfalldata.com
